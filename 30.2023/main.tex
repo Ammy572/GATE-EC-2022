@@ -230,14 +230,14 @@ Question: For a real signal, which of the following is/are valid power spectral 
 \begin{enumerate}
 \item \label{eq:30/2023/1}$s_X(\omega)=\frac{2}{9+\omega^2}$\\
 \item \label{eq:30/2023/2}$s_X(\omega)=e^{-\omega^2}cos^2{\omega}$
-\item See \figref{Fig:Figure1}\label{eq:30/2023/3}
+\item See \figref{Fig:Figure1}
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=\columnwidth]{/home/aman123/GATE-EC(2022)/30.2023/figs/fig1.png}
     \caption{Figure1}
 	\label{Fig:Figure1}
 \end{figure}
-\item See \figref{Fig:Figure2}\label{eq:30/2023/4}
+\item See \figref{Fig:Figure2}
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[width=\columnwidth]{/home/aman123/GATE-EC(2022)/30.2023/figs/fig2.png}
@@ -258,9 +258,9 @@ S_X &= \int{R_X(\tau)e^{(-j\omega\tau)}d\tau}\\
 Now,For a real signal,the $R_X(\tau)$ is real and even the fourier transform of $R_X(\tau)$ will also exhibits the same properties:
 \begin{align}
 Im(s_X(\omega)) &=-\int{j\sbrak{R_X(\tau)sin(\omega\tau)d\tau}} \\
-&= 0\\
+\label{eq:30/2023/5}&\implies 0\\
 \text{and, }
-s_X(-\omega)&=s_X(\omega)\\
+\label{eq:30/2023/6}s_X(-\omega)&=s_X(\omega)\\
 \int{R_X(\tau)e^{j\omega\tau}d\tau}&= \int{R_X(\tau)e^{-j\omega\tau}d\tau}
 \end{align}
 Now,
@@ -282,14 +282,14 @@ Also,
 \end{align}
 So, $S_X$ is valid.\\
 \item
-Refer to the properties in \eqref{eq:30/2023/3} \& \eqref{eq:30/2023/4}
+Refer to the properties in \eqref{eq:30/2023/5} \& \eqref{eq:30/2023/6}
 \begin{align}
 Im(e^{-\omega^2}cos^2\omega)=0\\
 e^{-\omega^2}cos^2\omega = e^{-(-\omega)^2}cos^2(-\omega)
 \end{align}
 It is also a valid $S_X$.\\
 \item
-Refer to the properties in \eqref{eq:30/2023/3} \& \eqref{eq:30/2023/4}
+Refer to the properties in \eqref{eq:30/2023/5} \& \eqref{eq:30/2023/6}
 \begin{align}
 S_X(-\omega) &= -S_X(\omega)
 \end{align}
