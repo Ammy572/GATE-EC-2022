@@ -228,16 +228,16 @@ EE22BTECH11006
 
 Question: For a real signal, which of the following is/are valid power spectral density/densities?
 \begin{enumerate}
-\item \label{eq:30/2023/1}$s_X(w)=\frac{2}{9+w^2}$\\
-\item \label{eq:30/2023/2}$s_X(w)=e^{-w^2}cos^2{w}$
-\item \label{eq:30/2023/3}
+\item \label{eq:30/2023/1}$s_X(\omega)=\frac{2}{9+\omega^2}$\\
+\item \label{eq:30/2023/2}$s_X(\omega)=e^{-\omega^2}cos^2{\omega}$
+\item See \figref{Fig:Figure1}\label{eq:30/2023/3}
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=\columnwidth]{/home/aman123/GATE-EC(2022)/30.2023/figs/fig1.png}
     \caption{Figure1}
 	\label{Fig:Figure1}
 \end{figure}
-\item \label{eq:30/2023/4}
+\item See \figref{Fig:Figure2}\label{eq:30/2023/4}
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[width=\columnwidth]{/home/aman123/GATE-EC(2022)/30.2023/figs/fig2.png}
@@ -252,17 +252,21 @@ R(\tau) \fourier S_X
 \end{align}
 which gives :
 \begin{align}
-S_X &= \int{R_X(\tau)e^{(-jw\tau)}d\tau}
+S_X &= \int{R_X(\tau)e^{(-j\omega\tau)}d\tau}\\
+&= \int{\sbrak{R_X(\tau)cos(\omega\tau)}-j{\sbrak{R_X(\tau)sin(\omega\tau)}}d\tau}
 \end{align}
 Now,For a real signal,the $R_X(\tau)$ is real and even the fourier transform of $R_X(\tau)$ will also exhibits the same properties:
 \begin{align}
-Im(s_X(w)) &=0 \\
-s_X(-w)&=s_X(w)
+Im(s_X(\omega)) &=-\int{j\sbrak{R_X(\tau)sin(\omega\tau)d\tau}} \\
+&= 0\\
+\text{and, }
+s_X(-\omega)&=s_X(\omega)\\
+\int{R_X(\tau)e^{j\omega\tau}d\tau}&= \int{R_X(\tau)e^{-j\omega\tau}d\tau}
 \end{align}
 Now,
 \begin{enumerate}
 \item 
-Plot for $S_X(w) = {\frac{2}{9+w^2}}$
+Plot for $S_X(\omega) = {\frac{2}{9+\omega^2}}$
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[width=\columnwidth]{/home/aman123/GATE-EC(2022)/30.2023/figs/plot.png}
@@ -270,42 +274,34 @@ Plot for $S_X(w) = {\frac{2}{9+w^2}}$
 	\label{Fig:Figure3}
 \end{figure}
 \begin{align}
-Im(\frac{2}{9+w^2})=0
+Im(\frac{2}{9+\omega^2})=0
 \end{align}
 Also,
 \begin{align}
-\frac{2}{9+w^2} = \frac{2}{9+(-w)^2}
+\frac{2}{9+\omega^2} = \frac{2}{9+(-\omega)^2}
 \end{align}
 So, $S_X$ is valid.\\
 \item
+Refer to the properties in \eqref{eq:30/2023/3} \& \eqref{eq:30/2023/4}
 \begin{align}
-Im(e^{-w^2}cos^2w)=0
-\end{align}
-And,
-\begin{align}
-e^{-w^2}cos^2w = e^{-(-w)^2}cos^2(-w)
+Im(e^{-\omega^2}cos^2\omega)=0\\
+e^{-\omega^2}cos^2\omega = e^{-(-\omega)^2}cos^2(-\omega)
 \end{align}
 It is also a valid $S_X$.\\
 \item
+Refer to the properties in \eqref{eq:30/2023/3} \& \eqref{eq:30/2023/4}
 \begin{align}
-S_X &= \begin{cases}
-	1 & 0<w<w_o\\
-	0 & -w_o<w<0
-\end{cases}\\
-Im(S_X) &= 0\\
-S_X(-w) &= -S_X(w)
+S_X(-\omega) &= -S_X(\omega)
 \end{align}
 As, It is real but odd function.So, it is not a valid $S_X$.
 \item 
 \begin{align}
 S_X &= \begin{cases}
-	1, 0<w<w_o\\
+	1, 0<\omega<\omega_o\\
 	0, \text{otherwise}
-\end{cases}\\
-R_X(\tau) &= \frac{1}{2\pi}\int_{-\infty}^{\infty}{S_X e^{jw\tau}dw}\\
-&= \frac{1}{2{\pi}{j}{\tau}}(e^{jw_0\tau}-1)
+\end{cases}
 \end{align}
-So, $R_X(\tau)$ is complex and cannot give a valid $S_X$\\
+Here, $S_X$ is neither odd nor even. So, it is not valid.
 \end{enumerate} 
 $\therefore$ Option \eqref{eq:30/2023/1} and \eqref{eq:30/2023/2} are correct.
 \end{document}
