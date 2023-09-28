@@ -228,8 +228,8 @@ EE22BTECH11006
 
 Question: For a real signal, which of the following is/are valid power spectral density/densities?
 \begin{enumerate}
-\item \label{eq:30/2023/1}$s_X(\omega)=\frac{2}{9+\omega^2}$\\
-\item \label{eq:30/2023/2}$s_X(\omega)=e^{-\omega^2}cos^2{\omega}$
+\item \label{eq:30/2023/1}$S_X(\omega)=\frac{2}{9+\omega^2}$\\
+\item \label{eq:30/2023/2}$S_X(\omega)=e^{-\omega^2}cos^2{\omega}$
 \item See \figref{Fig:Figure1}
 \begin{figure}[ht]
 	\centering
@@ -257,24 +257,29 @@ S_X &= \int{R_X(\tau)e^{(-j\omega\tau)}d\tau}\\
 \end{align}
 Now,For a real signal,the $R_X(\tau)$ is real and even the fourier transform of $R_X(\tau)$ will also exhibits the same properties:
 \begin{align}
-Im(s_X(\omega)) &=-\int{j\sbrak{R_X(\tau)sin(\omega\tau)d\tau}} \\
+\text{Im}(S_X(\omega)) &=-\int{j\sbrak{R_X(\tau)sin(\omega\tau)d\tau}} \\
 \label{eq:30/2023/5}&\implies 0\\
 \text{and, }
-\label{eq:30/2023/6}s_X(-\omega)&=s_X(\omega)\\
+\label{eq:30/2023/6}S_X(-\omega)&=S_X(\omega)\\
 \int{R_X(\tau)e^{j\omega\tau}d\tau}&= \int{R_X(\tau)e^{-j\omega\tau}d\tau}
 \end{align}
+So, the properties of $S_X$ are:
+\begin{enumerate}[label=(\alph*)]
+\item \label{eq:30/2023/7} $\text{Im}S_X(\omega)&=0$
+\item \label{eq:30/2023/8}$S_X(-\omega)&= S_X(\omega)$
+\end{enumerate}
 Now,
 \begin{enumerate}
 \item 
 Plot for $S_X(\omega) = {\frac{2}{9+\omega^2}}$
-\begin{figure}[ht!]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=\columnwidth]{/home/aman123/GATE-EC(2022)/30.2023/figs/plot.png}
     \caption{plot1}
 	\label{Fig:Figure3}
 \end{figure}
 \begin{align}
-Im(\frac{2}{9+\omega^2})=0
+\text{Im}\brak{\frac{2}{9+\omega^2}}=0
 \end{align}
 Also,
 \begin{align}
@@ -282,14 +287,14 @@ Also,
 \end{align}
 So, $S_X$ is valid.\\
 \item
-Refer to the properties in \eqref{eq:30/2023/5} \& \eqref{eq:30/2023/6}
+Using \eqref{eq:30/2023/7} \&& \eqref{eq:30/2023/8}
 \begin{align}
-Im(e^{-\omega^2}cos^2\omega)=0\\
+\text{Im}(e^{-\omega^2}cos^2\omega)=0\\
 e^{-\omega^2}cos^2\omega = e^{-(-\omega)^2}cos^2(-\omega)
 \end{align}
 It is also a valid $S_X$.\\
 \item
-Refer to the properties in \eqref{eq:30/2023/5} \& \eqref{eq:30/2023/6}
+Using \eqref{eq:30/2023/7} \&& \eqref{eq:30/2023/8}
 \begin{align}
 S_X(-\omega) &= -S_X(\omega)
 \end{align}
