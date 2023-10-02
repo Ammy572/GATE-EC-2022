@@ -270,16 +270,23 @@ Differentiating to find PDF for $Y$:
 f_{X^2}(y)&=\diff{(1 - e^{-\frac{\sqrt{y}}{\lambda}})}{y}\\
 &= \frac{1}{2\lambda\sqrt{y}}e^{-{\frac{\sqrt{y}}{\lambda}}}
 \end{align}
-Now, for finding theoretical population moment and equating it to sample moment
+Now, we want to estimate the parameter $\lambda$, for which we can use method of moment estimator ($\hat{\lambda}$).\\
+Defining Population moment
 \begin{align}
-\bar{Y} &= E(y)\\
+\mu_1(\lambda)&= E(y)\\
 &= \int_{0}^{\infty}yf_{X^2}(y)dy\\
 &= \int_{0}^{\infty}\frac{1}{2\lambda}\sqrt{y}e^{-\frac{\sqrt{y}}{\lambda}}dy\\
 &= 2{\lambda}^2
 \end{align}
-From this we get:
+Defining sample moment as:
 \begin{align}
-\lambda &= \sqrt{\frac{\bar{Y}}{2}}
+M_1 &= \frac{1}{n}\sum_{i=1}^n Y_i 
+\end{align}
+Now, equating Population and sample moment:
+\begin{align}
+M_1 &= \mu_1(\lambda)\\
+\bar{Y} &= 2(\lambda^2)\\
+\hat{\lambda} &= \sqrt{\frac{\bar{Y}}{2}}
 \end{align}
 $\therefore$ Option \eqref{eq:22/2023/1} is correct.
 \end{document}
