@@ -247,7 +247,16 @@ then which of the following statements is true?
 \item $2\sqrt{\bar{Y}} \text{is a method of moments estimator of} \lambda$
 \end{enumerate}
 \solution\\
-Given, PDF of $X$ is :
+For random variables $Y_1,...,Y_n$ chosen according to the probability distribution as $X^2$ for the parameter value $\lambda$ and $m$ a real valued function, then 
+\begin{align}
+\frac{1}{n}\sum_{i=1}^{n}m(Y_i)\to k(\theta) , n\to \theta
+\end{align} 
+The method of moments results from the choices $m(x)=x^{m}$,then
+\begin{align}
+\mu_m = EY^{m} = k_m(\theta)
+\end{align}
+for $m^{th}$ moment.\\
+Now, PDF of $X$ is :
 \begin{align}
 f(x;\lambda)&=
 \begin{cases}
@@ -255,7 +264,7 @@ f(x;\lambda)&=
 0 & \text{otherwise}
 \end{cases}
 \end{align}
-Now, let's find the PDF of $X^2$,denoted as $f_{X^2}(y)$.For $Y=X^2$, CDF of $Y$:
+For finding method of moment estimator we will find the PDF of $X^2$,denoted as $f_{X^2}(y)$.For $Y=X^2$, CDF of $Y$:
 \begin{align}
 F_Y(y)&= P(X^2 \leq y)\\
 &= P(0 \leq X \leq \sqrt{y})
