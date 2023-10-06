@@ -228,7 +228,7 @@ EE22BTECH11006
 
 Question: Let $X$ be a random variable with probability density function
 \begin{align}
-f(x;\lambda)&=
+\label{eq:22/2023/1}f(x;\lambda)&=
 \begin{cases}
 \frac{1}{\lambda}e^{-\frac{x}{\lambda}} & \text{if} x>0\\
 0 & \text{otherwise}
@@ -237,65 +237,32 @@ f(x;\lambda)&=
 where $\lambda > 0$ is an unknown parameter. Let $Y_1, Y_2,...,Y_n$ be a random sample of
 size $n$ from a population having the same distribution as $X^2$.If
 \begin{align}
-\bar{Y} &= \frac{1}{n}\sum_{i=1}^n Y_i
+\label{eq:22/2023/2}\bar{Y} &= \frac{1}{n}\sum_{i=1}^n Y_i
 \end{align}
 then which of the following statements is true?
 \begin{enumerate}
-\item \label{eq:22/2023/1}$\sqrt{\frac{\bar{Y}}{2}} \text{is a method of moments estimator of}         \lambda$
+\item \label{eq:22/2023/3}$\sqrt{\frac{\bar{Y}}{2}} \text{is a method of moments estimator of}         \lambda$
 \item $\sqrt{\bar{Y}} \text{is a method of moments estimator of}\lambda$
 \item ${\frac{1}{2}\sqrt{\bar{Y}}} \text{is a method of moments estimator of }\lambda$
 \item $2\sqrt{\bar{Y}} \text{is a method of moments estimator of} \lambda$
 \end{enumerate}
 \solution\\
-For random variables $Y_1,...,Y_n$ chosen according to the probability distribution as $X^2$ for the parameter value $\lambda$ and $m$ a real valued function, then 
+Using PDF in \eqref{eq:22/2023/1} we need to find an estimator for the unknown parameter $\lambda$ in terms of sample mean $\bar{Y}$\\
+we know $Y_i=X_i^2$
+then,
 \begin{align}
-\frac{1}{n}\sum_{i=1}^{n}m(Y_i)\to k(\theta) , n\to \theta
-\end{align} 
-The method of moments results from the choices $m(x)=x^{m}$,then
-\begin{align}
-\mu_m = EY^{m} = k_m(\theta)
-\end{align}
-for $m^{th}$ moment.\\
-Now, PDF of $X$ is :
-\begin{align}
-f(x;\lambda)&=
-\begin{cases}
-\frac{1}{\lambda}e^{-\frac{x}{\lambda}} & \text{if} x>0\\
-0 & \text{otherwise}
-\end{cases}
-\end{align}
-For finding method of moment estimator we will find the PDF of $X^2$,denoted as $f_{X^2}(y)$.For $Y=X^2$, CDF of $Y$:
-\begin{align}
-F_Y(y)&= P(X^2 \leq y)\\
-&= P(0 \leq X \leq \sqrt{y})
-\end{align}
-Now, 
-\begin{align}
-F_Y(y) &= \int_{0}^{\sqrt{y}}\frac{1}{\lambda}e^{-\frac{x}{\lambda}}dx\\
-&=1 - e^{-\frac{\sqrt{y}}{\lambda}} 
-\end{align}
-Differentiating to find PDF for $Y$:
-\begin{align}
-f_{X^2}(y)&=\diff{(1 - e^{-\frac{\sqrt{y}}{\lambda}})}{y}\\
-&= \frac{1}{2\lambda\sqrt{y}}e^{-{\frac{\sqrt{y}}{\lambda}}}
-\end{align}
-Now, we want to estimate the parameter $\lambda$, for which we can use method of moment estimator ($\hat{\lambda}$).\\
-Defining Population moment
-\begin{align}
-\mu_1(\lambda)&= E(y)\\
-&= \int_{0}^{\infty}yf_{X^2}(y)dy\\
-&= \int_{0}^{\infty}\frac{1}{2\lambda}\sqrt{y}e^{-\frac{\sqrt{y}}{\lambda}}dy\\
+E(Y_i)&=E(X_i^2)\\
+&= \int_{0}^{\infty}x^2\frac{1}{\lambda}e^{-\frac{x}{\lambda}}\\
 &= 2{\lambda}^2
-\end{align}
-Defining sample moment as:
+\end{align} 
+Method of moment is defined by \eqref{eq:22/2023/2} which gives,
 \begin{align}
-M_1 &= \frac{1}{n}\sum_{i=1}^n Y_i 
-\end{align}
-Now, equating Population and sample moment:
+\bar{Y} & = E(Y_i)\\
+&= 2{\lambda}^2
+\end{align} 
+where
 \begin{align}
-M_1 &= \mu_1(\lambda)\\
-\bar{Y} &= 2(\lambda^2)\\
-\hat{\lambda} &= \sqrt{\frac{\bar{Y}}{2}}
+\lambda &= \sqrt{\frac{\bar{Y}}{2}}
 \end{align}
-$\therefore$ Option \eqref{eq:22/2023/1} is correct.
+$\therefore$ Option \eqref{eq:22/2023/3} is correct.
 \end{document}

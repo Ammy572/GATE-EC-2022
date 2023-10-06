@@ -1,10 +1,25 @@
-# Calculate the method of moments estimator for lambda symbolically
-def estimate_lambda_symbolic():
-    return "sqrt(Y_bar / 2)"
+import numpy as np
 
-# Get the symbolic expression for lambda in terms of Y_bar
-lambda_expression = estimate_lambda_symbolic()
+# Set the random seed for reproducibility
+np.random.seed(50)
 
-# Print the symbolic expression
-print("Estimated Lambda in terms of Y_bar:", lambda_expression)
+# Generate a random value for lambda
+true_lambda = np.random.uniform(1, 6)  # You can adjust the range as needed
 
+# No. of samples
+n = 10000
+
+# Generate random values of X based on the given probability density function
+X = np.random.exponential(scale=true_lambda, size=n)
+
+# Compute Y using X
+Y = X ** 2
+
+# Compute the sample mean of Y (Y̅)
+sample_mean_Y = np.mean(Y)
+
+# Estimate lambda using (Y̅)
+estimated_lambda = np.sqrt(sample_mean_Y / 2)
+print("True Lambda:", true_lambda)
+print("Estimated Lambda:", estimated_lambda)
+print(X)
