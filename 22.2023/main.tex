@@ -247,7 +247,8 @@ then which of the following statements is true?
 \item $2\sqrt{\bar{Y}} \text{is a method of moments estimator of} \lambda$
 \end{enumerate}
 \solution\\
-Using PDF in \eqref{eq:22/2023/1} we need to find an estimator for the unknown parameter $\lambda$ in terms of sample mean $\bar{Y}$\\
+\begin{enumerate}
+\item Using PDF in \eqref{eq:22/2023/1} we need to find an estimator for the unknown parameter $\lambda$ in terms of sample mean $\bar{Y}$\\
 we know $Y_i=X_i^2$
 then,
 \begin{align}
@@ -265,4 +266,13 @@ where
 \lambda &= \sqrt{\frac{\bar{Y}}{2}}
 \end{align}
 $\therefore$ Option \eqref{eq:22/2023/3} is correct.
+\item The simulation steps to estimate $\lambda$ using method of moment estimator in python.
+\begin{enumerate}{\alph*}
+\item Generate a random value of $\lambda$ within the specified range using \textbf{np.random.uniform(1,10)}
+\item Use the generated $\lambda$ to create a random sample of $X$ values following the given PDF using \textbf{np.random.exponential()}
+\item Then, generate $Y$ as $Y=X^2$ 
+\item calculate the mean ($\bar{Y}$) as \textbf{np.mean($Y$)}
+\item Hence, the estimated value of $\lambda$ is \textbf{np.sqrt($\frac{\bar{Y}}{2}$)}
+\end{enumerate}
+\end{enumerate}
 \end{document}
