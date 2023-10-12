@@ -101,7 +101,7 @@
 
 %\bibliographystyle{ieeetr}
 \begin{document}
-%
+	%
 
 \bibliographystyle{IEEEtran}
 
@@ -228,40 +228,31 @@ EE22BTECH11006
 
 Question: A cytoplasmic male-sterile female plant with the restorer (nuclear) genotype $rr$ is crossed to a male-fertile male plant with the genotype $RR$. Both $RR$ and $Rr$ can restore the fertility, whereas $rr$ cannot. When an $F1$ female plant with $Rr$ genotype was test-crossed to a male-fertile male plant with the $rr$ genotype, the percentage of the population that is male fertile would be?\\
 \solution\\
-Given, genotype of cytoplasmic male-sterile female plant is $rr$. \\
-Genotype of male-fertile male plant is $RR$.\\
-On cross between them ($rr$) and ($RR$) using Punnet square method we get:
+On crossing between $rr$ and $RR$ we get:
 \begin{table}[h]
-	\input{/home/aman123/GATE-EC(2022)/XL/tables/table1.tex}
+	\input{/home/aman123/GATE-EC(2022)/XL/64/tables/table1.tex}
+	\caption{Table1: Crossing btw $RR$ and $rr$}
+	\label{tab:Table1}
 \end{table}
 \begin{align}
 F_1 &= Rr,Rr,Rr,Rr
 \end{align}
-Now, Let $X$ be the random variable representing the genotype of the $F_1$ female plant
-\begin{align}
-p_X(Rr) = 1
-\end{align} 
-So, 
-when $F_1$ female ($Rr$) genotype was test-crossed to male-fertile male ($rr$) genotype. \\
-The following are the outcomes:
-\begin{align}
-Rr,Rr,rr,rr
-\end{align}
-\begin{table}[ht]
-	\input{/home/aman123/GATE-EC(2022)/XL/tables/table2.tex}
+When $F_1$ ($Rr$) is test-crossed with $rr$ we get:
+\begin{table}[h]
+	\input{/home/aman123/GATE-EC(2022)/XL/64/tables/table2.tex}
+	\caption{Table2: Crossing btw $Rr$ and $rr$}
+	\label{tab: Table2}
 \end{table}\\
-$Y$ be the random variable representing the genotype of male plant in test cross.
+Now, Let $X$ be the random variable representing the genotype of the male offspring.
 \begin{align}
-p_Y(rr) = \frac{1}{2}
-\end{align}
-And, $Z$ be the random variable represent the genotype of the male fertile  offsprings 
-So, the probability that the offspring is male fertile is :
+X &= \begin{cases}
+1 &  Rr\\
+0 &  rr
+\end{cases}
+\end{align} 
+So, From the table \ref{tab: Table2} we know:
 \begin{align}
-p_Z(Rr) &= \pr{Z=Rr|X=Rr}\\
-&= \frac{1}{2}
+p_X(1) &= \frac{1}{2}
 \end{align}
-which gives 
-\begin{align}
-p_Z(Rr)\times 100 &= 50\%
-\end{align}
+$\therefore$ The percentage of the population that is male fertile would be 50\%
 \end{document}
