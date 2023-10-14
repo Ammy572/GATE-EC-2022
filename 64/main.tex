@@ -101,7 +101,7 @@
 
 %\bibliographystyle{ieeetr}
 \begin{document}
-	%
+ 	%
 
 \bibliographystyle{IEEEtran}
 
@@ -243,15 +243,16 @@ When $F_1$ ($Rr$) is test-crossed with $rr$ we get:
 	\caption{Table2: Crossing btw $Rr$ and $rr$}
 	\label{tab: Table2}
 \end{table}\\
-Now, Let $X$ be the random variable representing the genotype of the male offspring.
+Now, Let $X$ be the random variable representing the gene.
 \begin{align}
 X &= \begin{cases}
-1 &  Rr\\
-0 &  rr
+1 &  R\\
+0 &  r
 \end{cases}
-\end{align} 
-So, From the table \ref{tab: Table2} we know:
+\end{align}
+Probability that the population is male fertile is given by:
 \begin{align}
+p_X(k) &= \comb{1}{k} \brak{\frac{1}{2}}^k \brak{\frac{1}{2}}^{n-k}\\
 p_X(1) &= \frac{1}{2}
 \end{align}
 $\therefore$ The percentage of the population that is male fertile would be 50\%
