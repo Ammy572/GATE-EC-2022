@@ -1,33 +1,37 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-#define NUM_TRIALS 10000
+// Function to perform genetic cross and calculate all possible offspring
+void genetic_cross(const char parent1[2], const char parent2[2], char offspring[4][3]) {
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            offspring[i * 2 + j][0] = parent1[i];
+            offspring[i * 2 + j][1] = parent2[j];
+            offspring[i * 2 + j][2] = '\0';
+        }
+    }
+}
 
 int main() {
-  // Define the probability of the offspring inheriting the R allele.
-  double p = 0.5;
+    char genotype1[2];
+    char genotype2[2];
 
-  // Initialize a counter for the number of male fertile offspring.
-  int num_fertile = 0;
+    printf("Enter genotype 1 (10, 11, 00): ");
+    scanf("%s", genotype1);
 
-  // Simulate NUM_TRIALS test crosses.
-  for (int i = 0; i < NUM_TRIALS; i++) {
-    // Generate a random number between 0 and 1.
-    double r = (double)rand() / RAND_MAX;
+    printf("Enter genotype 2 (10, 11, 00): ");
+    scanf("%s", genotype2);
 
-    // If the random number is less than or equal to p, the offspring is male fertile.
-    if (r <= p) {
-      num_fertile++;
+    char offspring[4][3];
+
+    // Perform genetic cross to calculate all possible offspring
+    genetic_cross(genotype1, genotype2, offspring);
+
+    // Display all possible offspring
+    printf("Possible Offspring:\n");
+    for (int i = 0; i < 4; i++) {
+        printf("Offspring %d: %s\n", i + 1, offspring[i]);
     }
-  }
 
-  // Calculate the percentage of the population that is male fertile.
-  double fertile_percentage = (double)num_fertile / NUM_TRIALS * 100.0;
-  double theoretical_fertile_perc = p * 100.0;
-  // Print the results.
-  printf("The theoretical result is %.2f%%. \n", theoretical_fertile_perc);
-  printf("The simulated result is %.2f%%.\n", fertile_percentage);
-
-  return 0;
+    return 0;
 }
 
